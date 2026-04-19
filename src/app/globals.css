@@ -1,26 +1,1255 @@
+/*
+  Webhouse Design System — globals.css
+  Tailwind CSS v4 (CSS-first configuration)
+
+  Fonte: Figtree — carregada via next/font/google no layout.tsx
+*/
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ─────────────────────────────────────────────────────────────────────────
+   @theme — Design tokens (substitui tailwind.config.js no v4)
+   ───────────────────────────────────────────────────────────────────────── */
+@theme {
+
+  /* ── Cores — Primary Red ─────────────────────────────────────────────── */
+  --color-primary-50: #FFF0F2;
+  --color-primary-100: #FFD6DB;
+  --color-primary-200: #FFB3BB;
+  --color-primary-300: #FF8A96;
+  --color-primary-400: #FF5468;
+  --color-primary-500: #FF2840;
+  /* COR PRINCIPAL */
+  --color-primary-600: #E0001B;
+  --color-primary-700: #B8001A;
+  --color-primary-800: #8C0014;
+  --color-primary-900: #5C000D;
+
+  /* ── Cores — Secondary Grey ──────────────────────────────────────────── */
+  --color-secondary-50: #F5F5F5;
+  --color-secondary-100: #E0E0E0;
+  --color-secondary-200: #BDBDBD;
+  --color-secondary-300: #9E9E9E;
+  --color-secondary-400: #757575;
+  --color-secondary-500: #616161;
+  --color-secondary-600: #4A4A4A;
+  --color-secondary-700: #333333;
+  /* COR BASE */
+  --color-secondary-800: #222222;
+  --color-secondary-900: #111111;
+
+  /* ── Cores — Neutral ─────────────────────────────────────────────────── */
+  --color-neutral-50: #FAFAFA;
+  --color-neutral-100: #F4F4F4;
+  --color-neutral-200: #E9E9E9;
+  /* BASE NEUTRA */
+  --color-neutral-300: #D4D4D4;
+  --color-neutral-400: #ABABAB;
+  --color-neutral-500: #888888;
+  --color-neutral-600: #666666;
+  --color-neutral-700: #444444;
+  --color-neutral-800: #2A2A2A;
+  --color-neutral-900: #1A1A1A;
+
+  /* ── Cores — Estados semânticos ──────────────────────────────────────── */
+  --color-success: #1A7F5A;
+  --color-success-bg: #E6F5EF;
+  --color-success-text: #0F5C3E;
+
+  --color-warning: #B45309;
+  --color-warning-bg: #FEF3C7;
+  --color-warning-text: #92400E;
+
+  --color-error: #FF2840;
+  --color-error-bg: #FFF0F2;
+  --color-error-text: #B8001A;
+
+  --color-info: #1D62A8;
+  --color-info-bg: #EBF4FF;
+  --color-info-text: #134F8A;
+
+  /* ── Tipografia ──────────────────────────────────────────────────────── */
+  --font-sans: "Figtree", sans-serif;
+  --font-display: "Figtree", sans-serif;
+
+  /* ── Tamanhos de fonte (12px → 128px) ────────────────────────────────── */
+  --text-2xs: 0.75rem;
+  /* 12px */
+  --text-xs: 0.875rem;
+  /* 14px */
+  --text-sm: 1rem;
+  /* 16px */
+  --text-md: 1.125rem;
+  /* 18px */
+  --text-lg: 1.25rem;
+  /* 20px */
+  --text-xl: 1.5rem;
+  /* 24px */
+  --text-2xl: 1.75rem;
+  /* 28px */
+  --text-3xl: 2rem;
+  /* 32px */
+  --text-4xl: 2.25rem;
+  /* 36px */
+  --text-5xl: 2.5rem;
+  /* 40px */
+  --text-6xl: 3rem;
+  /* 48px */
+  --text-7xl: 3.5rem;
+  /* 56px */
+  --text-8xl: 4rem;
+  /* 64px */
+  --text-9xl: 4.5rem;
+  /* 72px */
+  --text-10xl: 5rem;
+  /* 80px */
+  --text-11xl: 6rem;
+  /* 96px */
+  --text-12xl: 7rem;
+  /* 112px */
+  --text-display: 8rem;
+  /* 128px */
+
+  /* ── Pesos de fonte ──────────────────────────────────────────────────── */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  /* ── Letter spacing ──────────────────────────────────────────────────── */
+  --tracking-tightest: -0.03em;
+  --tracking-tighter: -0.025em;
+  --tracking-tight: -0.02em;
+  --tracking-snug: -0.015em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+
+  /* ── Line height ─────────────────────────────────────────────────────── */
+  --leading-none: 1;
+  --leading-tightest: 1.05;
+  --leading-tight: 1.1;
+  --leading-snug: 1.15;
+  --leading-normal: 1.2;
+  --leading-relaxed: 1.3;
+  --leading-loose: 1.4;
+  --leading-body: 1.5;
+  --leading-reading: 1.6;
+  --leading-spacious: 1.7;
+
+  /* ── Border radius ───────────────────────────────────────────────────── */
+  --radius-none: 0px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* ── Border width ────────────────────────────────────────────────────── */
+  --border-width-DEFAULT: 1px;
+  --border-width-medium: 1.5px;
+  --border-width-thick: 2px;
+
+  /* ── Espaçamentos — grid de 8px ──────────────────────────────────────── */
+  --spacing-px: 1px;
+  --spacing-0: 0px;
+  --spacing-0_5: 4px;
+  --spacing-1: 8px;
+  --spacing-2: 16px;
+  --spacing-3: 24px;
+  --spacing-4: 32px;
+  --spacing-5: 40px;
+  --spacing-6: 48px;
+  --spacing-7: 56px;
+  --spacing-8: 64px;
+  --spacing-9: 72px;
+  --spacing-10: 80px;
+  --spacing-11: 88px;
+  --spacing-12: 96px;
+  --spacing-13: 104px;
+
+  /* ── Max width ───────────────────────────────────────────────────────── */
+  --max-w-none: none;
+  --max-w-full: 100%;
+  --max-w-screen: 100vw;
+  --max-w-prose: 65ch;
+  --max-w-site: 1200px;
+
+  /* ── Breakpoints ─────────────────────────────────────────────────────── */
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
+  --breakpoint-3xl: 1920px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─────────────────────────────────────────────────────────────────────────
+   Base — resets e defaults globais
+   ───────────────────────────────────────────────────────────────────────── */
+@layer base {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    color: var(--color-secondary-700);
+    background-color: var(--color-white, #ffffff);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ── Headings canônicos ─────────────────────────────────────────────── */
+  h1 {
+    font-size: var(--text-5xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--leading-tightest);
+    letter-spacing: var(--tracking-tightest);
+    color: var(--color-secondary-700);
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: var(--text-7xl);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: var(--text-9xl);
+    }
+  }
+
+  h2 {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-weight-extrabold);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tighter);
+    color: var(--color-secondary-700);
+  }
+
+  @media (min-width: 768px) {
+    h2 {
+      font-size: var(--text-5xl);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    h2 {
+      font-size: var(--text-7xl);
+    }
+  }
+
+  h3 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-extrabold);
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-secondary-700);
+  }
+
+  @media (min-width: 768px) {
+    h3 {
+      font-size: var(--text-4xl);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    h3 {
+      font-size: var(--text-5xl);
+    }
+  }
+
+  h4 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-snug);
+    color: var(--color-secondary-700);
+  }
+
+  @media (min-width: 768px) {
+    h4 {
+      font-size: var(--text-2xl);
+    }
+  }
+
+  h5 {
+    font-size: var(--text-md);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--leading-relaxed);
+    letter-spacing: var(--tracking-snug);
+    color: var(--color-secondary-700);
+  }
+
+  @media (min-width: 768px) {
+    h5 {
+      font-size: var(--text-lg);
+    }
+  }
+
+  h6 {
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--leading-loose);
+    letter-spacing: var(--tracking-normal);
+    color: var(--color-secondary-500);
+  }
+
+  /* ── Parágrafos ─────────────────────────────────────────────────────── */
+  p {
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--leading-spacious);
+    color: var(--color-secondary-700);
+  }
+
+  /* ── Links ───────────────────────────────────────────────────────────── */
+  a {
+    color: var(--color-primary-500);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 150ms;
+  }
+
+  a:hover {
+    color: var(--color-primary-400);
+  }
+
+  a:active {
+    color: var(--color-primary-600);
+  }
+
+  a:visited {
+    color: var(--color-primary-700);
+  }
+
+  /* ── Inputs e selects ────────────────────────────────────────────────── */
+  input,
+  textarea,
+  select {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: var(--color-secondary-700);
+    background-color: white;
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--radius-md);
+    padding: 8px 24px;
+    width: 100%;
+    transition: border-color 150ms;
+    outline: none;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-secondary-300);
+  }
+
+  input:hover,
+  textarea:hover,
+  select:hover {
+    border-color: var(--color-neutral-300);
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: var(--color-primary-500);
+    box-shadow: 0 0 0 2px var(--color-primary-100);
+  }
+
+  input:disabled,
+  textarea:disabled,
+  select:disabled {
+    background-color: var(--color-neutral-100);
+    color: var(--color-neutral-400);
+    cursor: not-allowed;
+    border-color: var(--color-neutral-200);
+  }
+
+  input[aria-invalid="true"],
+  textarea[aria-invalid="true"] {
+    border-color: var(--color-error);
+    background-color: var(--color-error-bg);
+  }
+
+  /* ── Listas ──────────────────────────────────────────────────────────── */
+  ul,
+  ol {
+    padding-left: 20px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+/* ─────────────────────────────────────────────────────────────────────────
+   @utility — Utilitários customizados do design system
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* ── Container do site ──────────────────────────────────────────────────── */
+@utility container-site {
+  width: 100%;
+  max-width: var(--max-w-site);
+  margin-inline: auto;
+  padding-inline: 32px;
+
+  @media (min-width: 768px) {
+    padding-inline: 48px;
+  }
+
+  @media (min-width: 1024px) {
+    padding-inline: 64px;
+  }
+}
+
+/* Container padrão do projeto (alias de container-site) */
+@utility container {
+  width: 100%;
+  max-width: var(--max-w-site);
+  margin-inline: auto;
+  padding-inline: 32px;
+
+  @media (min-width: 768px) {
+    padding-inline: 48px;
+  }
+
+  @media (min-width: 1024px) {
+    padding-inline: 64px;
+  }
+}
+
+/* ── full — seção de largura total (padrão obrigatório) ──────────────────── */
+@utility full {
+  width: 100%;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   @layer components — Componentes reutilizáveis
+   ───────────────────────────────────────────────────────────────────────── */
+@layer components {
+
+  /* ════════════════════════════════════════════════
+     BOTÕES — todos usam border-radius: 8px (--radius-md)
+     ════════════════════════════════════════════════ */
+
+  /* Base compartilhada */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    border: none;
+    transition: background-color 150ms, color 150ms;
+  }
+
+  .btn:disabled {
+    cursor: not-allowed;
+  }
+
+  /* Tamanhos */
+  .btn-sm {
+    font-size: var(--text-2xs);
+    padding: 4px 16px;
+    min-height: 32px;
+  }
+
+  .btn-md {
+    font-size: var(--text-xs);
+    padding: 8px 24px;
+    min-height: 40px;
+  }
+
+  .btn-lg {
+    font-size: var(--text-sm);
+    padding: 16px 32px;
+    min-height: 48px;
+  }
+
+  .btn-xl {
+    font-size: var(--text-md);
+    padding: 16px 40px;
+    min-height: 56px;
+  }
+
+  /* ── Mixin interno de btn base (CSS puro, sem @apply) ──────────────── */
+  /* Variante: primário */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    border: none;
+    transition: background-color 150ms, color 150ms;
+    font-size: var(--text-xs);
+    padding: 8px 24px;
+    min-height: 40px;
+    background-color: var(--color-primary-500);
+    color: white;
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    background-color: var(--color-primary-400);
+  }
+
+  .btn-primary:active:not(:disabled) {
+    background-color: var(--color-primary-600);
+  }
+
+  .btn-primary:disabled {
+    background-color: var(--color-primary-200);
+    color: var(--color-primary-400);
+    cursor: not-allowed;
+  }
+
+  /* Variante: secundário (outline brand) */
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: background-color 150ms, color 150ms;
+    font-size: var(--text-xs);
+    padding: 8px 24px;
+    min-height: 40px;
+    background-color: transparent;
+    color: var(--color-primary-500);
+    border: 1.5px solid var(--color-primary-500);
+  }
+
+  .btn-secondary:hover:not(:disabled) {
+    background-color: var(--color-primary-50);
+  }
+
+  .btn-secondary:active:not(:disabled) {
+    background-color: var(--color-primary-100);
+  }
+
+  .btn-secondary:disabled {
+    color: var(--color-primary-300);
+    border-color: var(--color-primary-200);
+    cursor: not-allowed;
+  }
+
+  /* Variante: ghost (outline neutro) */
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: background-color 150ms, color 150ms;
+    font-size: var(--text-xs);
+    padding: 8px 24px;
+    min-height: 40px;
+    background-color: transparent;
+    color: var(--color-secondary-700);
+    border: 1px solid var(--color-secondary-700);
+  }
+
+  .btn-ghost:hover:not(:disabled) {
+    background-color: var(--color-neutral-200);
+  }
+
+  .btn-ghost:active:not(:disabled) {
+    background-color: var(--color-neutral-300);
+  }
+
+  .btn-ghost:disabled {
+    color: var(--color-neutral-400);
+    border-color: var(--color-neutral-300);
+    cursor: not-allowed;
+  }
+
+  /* Variante: dark */
+  .btn-dark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    border: none;
+    transition: background-color 150ms;
+    font-size: var(--text-xs);
+    padding: 8px 24px;
+    min-height: 40px;
+    background-color: var(--color-secondary-700);
+    color: white;
+  }
+
+  .btn-dark:hover:not(:disabled) {
+    background-color: var(--color-secondary-600);
+  }
+
+  .btn-dark:active:not(:disabled) {
+    background-color: var(--color-secondary-900);
+  }
+
+  .btn-dark:disabled {
+    background-color: var(--color-secondary-400);
+    cursor: not-allowed;
+  }
+
+  /* Variante: light (sobre fundo escuro) */
+  .btn-light {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    border: none;
+    transition: background-color 150ms;
+    font-size: var(--text-xs);
+    padding: 8px 24px;
+    min-height: 40px;
+    background-color: white;
+    color: var(--color-secondary-700);
+  }
+
+  .btn-light:hover:not(:disabled) {
+    background-color: var(--color-neutral-100);
+  }
+
+  .btn-light:active:not(:disabled) {
+    background-color: var(--color-neutral-200);
+  }
+
+  .btn-light:disabled {
+    background-color: var(--color-neutral-100);
+    color: var(--color-neutral-400);
+    cursor: not-allowed;
+  }
+
+
+  /* ════════════════════════════════════════════════
+     TIPOGRAFIA — variações de heading
+     ════════════════════════════════════════════════ */
+
+  /* H1 — variações de peso */
+  .h1-light {
+    font-size: var(--text-9xl);
+    font-weight: 300;
+    line-height: var(--leading-tightest);
+    letter-spacing: var(--tracking-tightest);
+    color: var(--color-secondary-700);
+  }
+
+  .h1-normal {
+    font-size: var(--text-9xl);
+    font-weight: 400;
+    line-height: var(--leading-tightest);
+    letter-spacing: var(--tracking-tightest);
+    color: var(--color-secondary-700);
+  }
+
+  .h1-medium {
+    font-size: var(--text-9xl);
+    font-weight: 500;
+    line-height: var(--leading-tightest);
+    letter-spacing: var(--tracking-tightest);
+    color: var(--color-secondary-700);
+  }
+
+  .h1-semibold {
+    font-size: var(--text-9xl);
+    font-weight: 600;
+    line-height: var(--leading-tightest);
+    letter-spacing: var(--tracking-tightest);
+    color: var(--color-secondary-700);
+  }
+
+  /* ★ canônico */
+  .h1-bold {
+    font-size: var(--text-9xl);
+    font-weight: 700;
+    line-height: var(--leading-tightest);
+    letter-spacing: var(--tracking-tightest);
+    color: var(--color-secondary-700);
+  }
+
+  .h1-extrabold {
+    font-size: var(--text-9xl);
+    font-weight: 800;
+    line-height: var(--leading-tightest);
+    letter-spacing: var(--tracking-tightest);
+    color: var(--color-secondary-700);
+  }
+
+  .h1-black {
+    font-size: var(--text-9xl);
+    font-weight: 900;
+    line-height: var(--leading-tightest);
+    letter-spacing: var(--tracking-tightest);
+    color: var(--color-secondary-700);
+  }
+
+  /* H2 — variações de peso */
+  .h2-light {
+    font-size: var(--text-7xl);
+    font-weight: 300;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tighter);
+    color: var(--color-secondary-700);
+  }
+
+  .h2-normal {
+    font-size: var(--text-7xl);
+    font-weight: 400;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tighter);
+    color: var(--color-secondary-700);
+  }
+
+  .h2-medium {
+    font-size: var(--text-7xl);
+    font-weight: 500;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tighter);
+    color: var(--color-secondary-700);
+  }
+
+  .h2-semibold {
+    font-size: var(--text-7xl);
+    font-weight: 600;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tighter);
+    color: var(--color-secondary-700);
+  }
+
+  .h2-bold {
+    font-size: var(--text-7xl);
+    font-weight: 700;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tighter);
+    color: var(--color-secondary-700);
+  }
+
+  .h2-extrabold {
+    font-size: var(--text-7xl);
+    font-weight: 800;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tighter);
+    color: var(--color-secondary-700);
+  }
+
+  /* ★ canônico */
+  .h2-black {
+    font-size: var(--text-7xl);
+    font-weight: 900;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tighter);
+    color: var(--color-secondary-700);
+  }
+
+  /* H3 — variações de peso */
+  .h3-light {
+    font-size: var(--text-5xl);
+    font-weight: 300;
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-secondary-700);
+  }
+
+  .h3-normal {
+    font-size: var(--text-5xl);
+    font-weight: 400;
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-secondary-700);
+  }
+
+  .h3-medium {
+    font-size: var(--text-5xl);
+    font-weight: 500;
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-secondary-700);
+  }
+
+  .h3-semibold {
+    font-size: var(--text-5xl);
+    font-weight: 600;
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-secondary-700);
+  }
+
+  .h3-bold {
+    font-size: var(--text-5xl);
+    font-weight: 700;
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-secondary-700);
+  }
+
+  .h3-extrabold {
+    font-size: var(--text-5xl);
+    font-weight: 800;
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-secondary-700);
+  }
+
+  /* ★ canônico */
+  .h3-black {
+    font-size: var(--text-5xl);
+    font-weight: 900;
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-secondary-700);
+  }
+
+  /* H4 — variações de peso */
+  .h4-light {
+    font-size: var(--text-2xl);
+    font-weight: 300;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-snug);
+    color: var(--color-secondary-700);
+  }
+
+  .h4-normal {
+    font-size: var(--text-2xl);
+    font-weight: 400;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-snug);
+    color: var(--color-secondary-700);
+  }
+
+  .h4-medium {
+    font-size: var(--text-2xl);
+    font-weight: 500;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-snug);
+    color: var(--color-secondary-700);
+  }
+
+  .h4-semibold {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-snug);
+    color: var(--color-secondary-700);
+  }
+
+  .h4-bold {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-snug);
+    color: var(--color-secondary-700);
+  }
+
+  /* ★ canônico */
+  .h4-extrabold {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-snug);
+    color: var(--color-secondary-700);
+  }
+
+  .h4-black {
+    font-size: var(--text-2xl);
+    font-weight: 900;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-snug);
+    color: var(--color-secondary-700);
+  }
+
+  /* H5 — variações de peso */
+  .h5-normal {
+    font-size: var(--text-lg);
+    font-weight: 400;
+    line-height: var(--leading-relaxed);
+    letter-spacing: var(--tracking-snug);
+    color: var(--color-secondary-700);
+  }
+
+  .h5-medium {
+    font-size: var(--text-lg);
+    font-weight: 500;
+    line-height: var(--leading-relaxed);
+    letter-spacing: var(--tracking-snug);
+    color: var(--color-secondary-700);
+  }
+
+  .h5-semibold {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    line-height: var(--leading-relaxed);
+    letter-spacing: var(--tracking-snug);
+    color: var(--color-secondary-700);
+  }
+
+  .h5-bold {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    line-height: var(--leading-relaxed);
+    letter-spacing: var(--tracking-snug);
+    color: var(--color-secondary-700);
+  }
+
+  /* ★ canônico */
+  .h5-extrabold {
+    font-size: var(--text-lg);
+    font-weight: 800;
+    line-height: var(--leading-relaxed);
+    letter-spacing: var(--tracking-snug);
+    color: var(--color-secondary-700);
+  }
+
+  .h5-black {
+    font-size: var(--text-lg);
+    font-weight: 900;
+    line-height: var(--leading-relaxed);
+    letter-spacing: var(--tracking-snug);
+    color: var(--color-secondary-700);
+  }
+
+  /* H6 — variações de peso */
+  .h6-normal {
+    font-size: var(--text-sm);
+    font-weight: 400;
+    line-height: var(--leading-loose);
+    letter-spacing: var(--tracking-normal);
+    color: var(--color-secondary-500);
+  }
+
+  .h6-medium {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    line-height: var(--leading-loose);
+    letter-spacing: var(--tracking-normal);
+    color: var(--color-secondary-500);
+  }
+
+  .h6-semibold {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    line-height: var(--leading-loose);
+    letter-spacing: var(--tracking-normal);
+    color: var(--color-secondary-500);
+  }
+
+  /* ★ canônico */
+  .h6-bold {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    line-height: var(--leading-loose);
+    letter-spacing: var(--tracking-normal);
+    color: var(--color-secondary-500);
+  }
+
+  .h6-extrabold {
+    font-size: var(--text-sm);
+    font-weight: 800;
+    line-height: var(--leading-loose);
+    letter-spacing: var(--tracking-normal);
+    color: var(--color-secondary-500);
+  }
+
+  /* ── Estilos de corpo de texto ──────────────────────────────────────── */
+  .text-body-xl {
+    font-size: var(--text-lg);
+    font-weight: 400;
+    line-height: var(--leading-spacious);
+    color: var(--color-secondary-700);
+  }
+
+  .text-body-lg {
+    font-size: var(--text-md);
+    font-weight: 400;
+    line-height: var(--leading-spacious);
+    color: var(--color-secondary-700);
+  }
+
+  .text-body-md {
+    font-size: var(--text-sm);
+    font-weight: 400;
+    line-height: var(--leading-spacious);
+    color: var(--color-secondary-700);
+  }
+
+  .text-body-sm {
+    font-size: var(--text-xs);
+    font-weight: 400;
+    line-height: var(--leading-reading);
+    color: var(--color-secondary-500);
+  }
+
+  .text-caption {
+    font-size: var(--text-2xs);
+    font-weight: 500;
+    line-height: var(--leading-body);
+    color: var(--color-secondary-400);
+  }
+
+  /* ── Estilos de UI ──────────────────────────────────────────────────── */
+  .text-label-lg {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    line-height: var(--leading-loose);
+    letter-spacing: var(--tracking-normal);
+    color: var(--color-secondary-700);
+  }
+
+  .text-label-md {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    line-height: var(--leading-loose);
+    letter-spacing: var(--tracking-normal);
+    color: var(--color-secondary-700);
+  }
+
+  .text-label-sm {
+    font-size: var(--text-2xs);
+    font-weight: 600;
+    line-height: var(--leading-body);
+    letter-spacing: var(--tracking-normal);
+    color: var(--color-secondary-700);
+  }
+
+  .text-overline {
+    font-size: var(--text-2xs);
+    font-weight: 700;
+    line-height: var(--leading-body);
+    letter-spacing: var(--tracking-widest);
+    color: var(--color-secondary-400);
+    text-transform: uppercase;
+  }
+
+  .text-btn-lg {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: var(--tracking-snug);
+  }
+
+  .text-btn-md {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: var(--tracking-snug);
+  }
+
+  .text-btn-sm {
+    font-size: var(--text-2xs);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: var(--tracking-normal);
+  }
+
+
+  /* ════════════════════════════════════════════════
+     LINKS — variantes contextuais
+     ════════════════════════════════════════════════ */
+
+  .link-nav {
+    color: var(--color-secondary-700);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 150ms;
+  }
+
+  .link-nav:hover {
+    color: var(--color-primary-500);
+  }
+
+  .link-nav-active {
+    color: var(--color-primary-500);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .link-cta {
+    color: var(--color-primary-500);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 150ms;
+  }
+
+  .link-cta:hover {
+    color: var(--color-primary-400);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .link-on-dark {
+    color: var(--color-primary-300);
+    text-decoration: none;
+    transition: color 150ms;
+  }
+
+  .link-on-dark:hover {
+    color: var(--color-primary-200);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+
+  /* ════════════════════════════════════════════════
+     BORDAS — helpers semânticos
+     ════════════════════════════════════════════════ */
+
+  .border-brand {
+    border: 1px solid var(--color-primary-500);
+  }
+
+  .border-brand-hover {
+    border: 1px solid var(--color-primary-400);
+  }
+
+  .border-brand-emphasis {
+    border: 1.5px solid var(--color-primary-500);
+  }
+
+  .border-brand-thick {
+    border: 2px solid var(--color-primary-500);
+  }
+
+  .border-brand-subtle {
+    border: 1px solid var(--color-primary-100);
+  }
+
+  .border-brand-muted {
+    border: 1px solid var(--color-primary-200);
+  }
+
+  .border-dark {
+    border: 1px solid var(--color-secondary-700);
+  }
+
+  .border-dark-hover {
+    border: 1px solid var(--color-secondary-600);
+  }
+
+  .border-dark-emphasis {
+    border: 1.5px solid var(--color-secondary-700);
+  }
+
+  .border-dark-thick {
+    border: 2px solid var(--color-secondary-700);
+  }
+
+  .border-dark-subtle {
+    border: 1px solid var(--color-secondary-300);
+  }
+
+  .border-dark-muted {
+    border: 1px solid var(--color-secondary-200);
+  }
+
+  .border-on-dark {
+    border: 1px solid var(--color-secondary-600);
+  }
+
+  .border-base {
+    border: 1px solid var(--color-neutral-200);
+  }
+
+  .border-base-subtle {
+    border: 1px solid var(--color-neutral-100);
+  }
+
+  .border-base-strong {
+    border: 1px solid var(--color-neutral-300);
+  }
+
+
+  /* ════════════════════════════════════════════════
+     BACKGROUNDS — helpers semânticos
+     ════════════════════════════════════════════════ */
+
+  .bg-surface {
+    background-color: var(--color-neutral-50);
+  }
+
+  .bg-surface-subtle {
+    background-color: var(--color-neutral-100);
+  }
+
+  .bg-surface-muted {
+    background-color: var(--color-neutral-200);
+  }
+
+  .bg-section-dark {
+    background-color: var(--color-secondary-700);
+  }
+
+  .bg-section-darker {
+    background-color: var(--color-secondary-800);
+  }
+
+  .bg-section-black {
+    background-color: var(--color-secondary-900);
+  }
+
+  .bg-brand-full {
+    background-color: var(--color-primary-500);
+  }
+
+  .bg-brand-subtle {
+    background-color: var(--color-primary-50);
+  }
+
+  .bg-brand-muted {
+    background-color: var(--color-primary-100);
+  }
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 0.5s ease;
+}
+
+.fade-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scale-in {
+  transform: scale(0.95);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.scale-in.active {
+  transform: scale(1);
+  opacity: 1;
 }
