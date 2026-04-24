@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/ui/SmoothScroll";
 
 const figtree = Figtree({
   subsets: ["latin"],
@@ -27,6 +28,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Web House" }],
   creator: "Web House",
+  icons: {
+    icon: "/favicon.svg",
+  },
   publisher: "Web House",
   openGraph: {
     type: "website",
@@ -74,7 +78,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={figtree.variable}>
+    <html lang="pt-BR" className={`${figtree.variable} scroll-smooth`}>
       <head>
         {/* Google Tag Manager — adicionar GTM_ID futuramente */}
         {/* <script dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){...})` }} /> */}
@@ -82,11 +86,13 @@ export default function RootLayout({
         {/* Facebook Pixel — adicionar PIXEL_ID futuramente */}
         {/* <script dangerouslySetInnerHTML={{ __html: `!function(f,b,e,v,n,t,s){...}` }} /> */}
       </head>
-      <body className="font-sans antialiased bg-white text-secondary-700">
-        {/* Google Tag Manager (noscript) — adicionar futuramente */}
-        {/* <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM_ID" /></noscript> */}
+      <body className="font-sans antialiased bg-secondary-900 text-white">
+        <SmoothScroll>
+          {/* Google Tag Manager (noscript) — adicionar futuramente */}
+          {/* <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM_ID" /></noscript> */}
 
-        {children}
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

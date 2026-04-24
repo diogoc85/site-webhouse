@@ -89,20 +89,21 @@ Cor principal da marca. Escala 50→900, ancoragem no **500**.
 
 ### 2.2 Secondary Grey — `secondary`
 
-Cor estrutural. Usada para backgrounds escuros, textos e superfícies. Escala 50→900, ancoragem no **700**.
+Cor estrutural. Usada para backgrounds escuros, textos e superfícies. Escala 50→900, ancoragem no **500**.
 
 | Classe Tailwind | Hex | Uso |
 |---|---|---|
-| `bg-secondary-50` | `#F5F5F5` | Fundo de página padrão |
-| `bg-secondary-100` | `#E0E0E0` | Superfícies de cards em contexto claro |
-| `bg-secondary-200` | `#BDBDBD` | Bordas e divisores em fundo claro |
-| `bg-secondary-300` | `#9E9E9E` | Texto desabilitado, placeholders |
-| `bg-secondary-400` | `#757575` | Texto terciário, captions |
-| `bg-secondary-500` | `#616161` | Texto secundário em fundo claro |
-| `bg-secondary-600` | `#4A4A4A` | Texto de corpo / bg elevado escuro |
-| **`bg-secondary-700`** | **`#333333`** | **COR BASE — texto primário, backgrounds escuros** |
-| `bg-secondary-800` | `#222222` | Fundos de seções escuras, footer |
-| `bg-secondary-900` | `#111111` | Fundo máximo |
+
+| `bg-secondary-50` | `#ebebeb` | Fundo de página padrão |
+| `bg-secondary-100` | `#c0c0c0` | Superfícies de cards em contexto claro |
+| `bg-secondary-200` | `#a1a1a1` | Bordas e divisores em fundo claro |
+| `bg-secondary-300` | `#767676` | Texto desabilitado, placeholders |
+| `bg-secondary-400` | `#5c5c5c` | Texto terciário, captions |
+| `bg-secondary-500` | `#333333` | COR BASE — texto primário, backgrounds escuros |
+| `bg-secondary-600` | `#2e2e2e` | Texto de corpo / bg elevado escuro |
+| `bg-secondary-700` | `#242424` | Texto secundário em fundo claro
+| `bg-secondary-800` | `#1c1c1c` | Fundos de seções escuras, footer |
+| `bg-secondary-900` | `#151515` | Fundo máximo |
 
 ---
 
@@ -423,6 +424,89 @@ Grid de **8px**. A escala do Tailwind foi substituída para alinhar com o design
 
 ---
 
+# 🔘 Button & Icon Sizing (Tokens)
+
+## 📏 Base
+
+Todos os tamanhos seguem a escala de 8px e são definidos como tokens no `globals.css`.
+
+---
+
+## 🔘 Button Sizes
+
+### Tokens
+
+* --btn-sm-height → 32px
+
+* --btn-md-height → 40px
+
+* --btn-lg-height → 48px
+
+* --btn-sm-px → 12px
+
+* --btn-md-px → 16px
+
+* --btn-lg-px → 24px
+
+* --btn-sm-py → 6px
+
+* --btn-md-py → 8px
+
+* --btn-lg-py → 12px
+
+---
+
+## Uso com Tailwind
+
+* sm → h-[var(--btn-sm-height)] px-3 py-1.5 text-sm
+* md → h-[var(--btn-md-height)] px-4 py-2 text-base
+* lg → h-[var(--btn-lg-height)] px-6 py-3 text-lg
+
+---
+
+## 🎯 Icon Sizes
+
+### Tokens
+
+* --icon-xs → 16px
+* --icon-sm → 20px
+* --icon-md → 24px
+* --icon-lg → 32px
+
+---
+
+## Uso com Tailwind
+
+* xs → w-4 h-4
+* sm → w-5 h-5
+* md → w-6 h-6
+* lg → w-8 h-8
+
+---
+
+## 📐 Spacing Tokens
+
+* --icon-gap-sm → 8px
+* --icon-gap-md → 12px
+
+---
+
+## Uso
+
+* botões → gap-2
+* listas/cards → gap-2 ou gap-3
+
+---
+
+## 🧠 Regras
+
+* Sempre usar tokens definidos
+* Nunca usar valores arbitrários
+* Seguir escala de 8px
+* Manter consistência entre componentes
+
+---
+
 ## 8. Links
 
 ### 8.1 Default (inline, dentro de texto)
@@ -530,7 +614,7 @@ Padrões recomendados para uso consistente no projeto:
 ```html
 <!-- Container padrão do site -->
 <div class="container-site">
-  <!-- max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8 -->
+  <!-- max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8 -->
 </div>
 
 <!-- Padding vertical de seção -->
@@ -576,7 +660,7 @@ Padrões recomendados para uso consistente no projeto:
 
 ### 9.5 Tipografia responsiva por heading
 
-| Heading | Base (mobile) | `md:` 768px | `lg:` 1024px |
+| Heading | Base (mobile) | `md:` 768px | `2xl:` 1440px |
 |---|---|---|---|
 | H1 | `text-5xl` — 40px | `text-7xl` — 56px | `text-9xl` — 72px |
 | H2 | `text-3xl` — 32px | `text-5xl` — 40px | `text-7xl` — 56px |
@@ -643,8 +727,8 @@ p-13          → 104px  (padding hero)
 ### Container padrão
 
 ```html
-<!-- SECTION HERO -->
-<section id="nome-da-section" className="full section">
+<!-- SECTION -->
+<section className="nome-da-section full section">
   <div className="container-site">
     {/* conteúdo */}
   </div>
