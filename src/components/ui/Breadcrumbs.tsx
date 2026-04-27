@@ -13,16 +13,16 @@ interface BreadcrumbsProps {
 
 export function Breadcrumbs({ items, className = "" }: BreadcrumbsProps) {
   return (
-    <nav aria-label="Breadcrumb" className={`flex items-center gap-2 text-xs md:text-sm ${className}`}>
+    <nav aria-label="Breadcrumb" className={`flex items-center gap-2 text-2xs md:text-xs ${className}`}>
       <Link href="/" className="text-white/60 hover:text-white transition-colors">
         Home
       </Link>
-      
+
       {items.map((item, index) => (
         <div key={item.href} className="flex items-center gap-2">
           <CaretRight weight="bold" className="w-2 h-2 text-white/40" />
           {index === items.length - 1 ? (
-            <span className="text-white font-medium" aria-current="page">
+            <span className="text-white font-regular" aria-current="page">
               {item.label}
             </span>
           ) : (

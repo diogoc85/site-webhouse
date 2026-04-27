@@ -86,15 +86,12 @@ export function Problemas() {
         </div>
 
         {/* Rodapé da Section */}
-        <Reveal delay={800} className="lg:flex flex-col sm:flex-row items-center justify-center gap-1 text-center text-sm md:text-base text-secondary-300">
-          <div className="lg:flex items-center gap-1 text-center justify-center">
-            <WarningDiamondIcon weight="regular" className="w-2 h-2 text-primary-500 shrink-0" />
-            <span>Se você disse sim para algum desses problemas, temos a solução certa para você.</span>
-          </div>
-          <Link
-            href="/contactos"
-            className="flex items-center gap-1 text-primary-500 hover:text-primary-400 transition-colors ml-1 font-medium group"
-          >
+        <Reveal delay={800} className="flex flex-col lg:flex-row items-center justify-center gap-1 text-center text-sm md:text-base text-secondary-300">
+
+          <WarningDiamondIcon weight="regular" className="w-2 h-2 text-primary-500 shrink-0" />
+          <span>Se você disse sim para algum desses problemas, temos a solução certa para você.</span>
+
+          <Link href="/contactos" className="flex items-center gap-1 text-primary-500 hover:text-primary-400 transition-colors ml-1 font-medium group">
             Entre em contato
             <ArrowUpRight weight="regular" className="w-2 h-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </Link>

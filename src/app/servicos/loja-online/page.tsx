@@ -20,7 +20,7 @@ export default function EcommerceServicePage() {
         <section id="hero" className="relative w-full h-[93vh] flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-32 overflow-hidden bg-[linear-gradient(135deg,#C71131_0%,#EF3B1F_100%)]">
 
           {/* Background Image Layer */}
-          <div className="absolute inset-0 z-0 flex items-end justify-center pointer-events-none">
+          <div className="absolute inset-0 z-0 flex items-end justify-center pointer-events-none bg-top md:bg-bottom">
             <Reveal animation="fade-right" className="flex items-end justify-center ">
               {/* Desktop Background */}
               <Image
@@ -37,7 +37,7 @@ export default function EcommerceServicePage() {
                 alt="Background ecommerce marketplace"
                 width={1000}
                 height={1500}
-                className="block md:hidden w-full h-full object-cover"
+                className="block md:hidden w-full h-full object-cover 0 center"
                 priority
               />
             </Reveal>
@@ -45,11 +45,11 @@ export default function EcommerceServicePage() {
 
           <div className="container-site relative z-10 flex flex-col items-center text-center pt-64 lg:pt-0 lg:text-left lg:items-start">
             <Reveal className="flex flex-col gap-4 mb-3 lg:mb-6">
-              <Breadcrumbs 
+              <Breadcrumbs
                 items={[
                   { label: "Serviços", href: "/#servicos" },
                   { label: "E-commerce", href: "/servicos/loja-online" }
-                ]} 
+                ]}
               />
               <div className="flex w-fit items-center gap-1 border border-white/30 rounded-full px-2 py-1.5">
                 <CrosshairIcon weight="regular" className="w-2 h-2 text-white animate-pulse" />

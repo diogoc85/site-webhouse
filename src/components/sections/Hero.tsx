@@ -55,7 +55,7 @@ export function Hero() {
         {/* CTAs */}
         <Reveal delay={300}>
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
-            <Link href="/contactos" className="bg-secondary-900 hover:bg-secondary-600 text-sm lg:text-lg w-full lg:w-fit btn-lg flex items-center gap-2 text-white rounded-md py-4 px-6 transition-colors">
+            <Link href="/contactos" className="bg-secondary-900 hover:bg-secondary-600 text-sm lg:text-lg w-full lg:w-fit btn-lg flex items-center gap-2 text-white rounded-md py-4 px-4 transition-colors">
               Quero marcar uma conversa
               <ArrowUpRight weight="regular" className="w-3 h-3" />
             </Link>

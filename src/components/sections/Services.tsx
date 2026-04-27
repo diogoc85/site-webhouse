@@ -112,8 +112,7 @@ export function Services() {
 
           {/* Heading */}
           <h2 className="text-center text-primary-50 text-lg md:text-3xl font-light">
-            <span className="text-primary-500 font-extrabold mr-2">O que fazemos</span>
-            e como cada solução pode crescer o seu negócio.
+            <span className="text-primary-500 font-extrabold">O que fazemos</span> e como cada solução pode crescer o seu negócio.
           </h2>
 
           {/* Subtitle */}
@@ -232,23 +231,6 @@ export function Services() {
         </div>
       </div>
 
-      {/* Setas Mobile */}
-      <div className="flex lg:hidden justify-center items-center gap-4 mt-8 w-full">
-        <button
-          onClick={() => scroll(-280)}
-          className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary-500 shadow-xl hover:bg-neutral-50 transition-colors"
-          aria-label="Anterior"
-        >
-          <ArrowLeft weight="bold" className="w-5 h-5" />
-        </button>
-        <button
-          onClick={() => scroll(280)}
-          className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary-500 shadow-xl hover:bg-neutral-50 transition-colors"
-          aria-label="Próximo"
-        >
-          <ArrowRight weight="bold" className="w-5 h-5" />
-        </button>
-      </div>
     </Section>
   );
 }
