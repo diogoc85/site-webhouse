@@ -32,7 +32,16 @@ const contactLinks = [
   { label: "BR +55 11 0000 0000", href: "tel:+551100000000" },
 ];
 
+import { CaretUp } from "@phosphor-icons/react";
+
 export function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <Section className="footer full bg-secondary-900 md:sticky lg:sticky lg:bottom-0 z-0 overflow-hidden lg:text-start text-center">
 
@@ -146,7 +155,7 @@ export function Footer() {
         <div className="w-full h-px bg-secondary-700/90" />
 
         {/* Rodapé Menor (Copyright & Leis) */}
-        <Reveal delay={150} className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left py-3 flex-col-reverse">
+        <Reveal delay={150} className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left py-3 flex-col-reverse relative">
           <p className="text-secondary-300 text-xs md:text-sm font-light">
             2026 Webhouse.Pt - Todos Os Direitos Reservados.
           </p>
@@ -166,10 +175,21 @@ export function Footer() {
             <Link href="/reclamacoes" className="text-secondary-300 hover:text-secondary-200 transition-colors">
               Livro Reclamações
             </Link>
+            <button
+              onClick={scrollToTop}
+              className="group flex items-center gap-2 text-white  text-xs md:text-sm uppercase tracking-widest font-medium cursor-pointer ml-3"
+              aria-label="Voltar ao topo"
+            >
+              <div className="w-5 h-5 rounded-full bg-primary-500 hover:bg-primary-600 transition-colors flex items-center justify-center">
+                <CaretUp weight="bold" className="w-3 h-3" />
+              </div>
+            </button>
           </div>
+
         </Reveal>
 
       </div>
     </Section>
   );
 }
+

@@ -3,12 +3,14 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { CaretDown, List, X } from "@phosphor-icons/react";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [lang, setLang] = useState({ code: "PT-BR", flag: "/assets/brasil.svg", label: "Brasil" });
+  const pathname = usePathname();
 
   const languageOptions = [
     { code: "PT-BR", flag: "/assets/brasil.svg", label: "Brasil" },
@@ -18,13 +20,19 @@ export function Header() {
 
   const links = [
     { label: "Home", href: "/" },
-    { label: "Sobre", href: "#" },
-    { label: "Serviços", href: "#" },
-    { label: "Software", href: "#" },
-    { label: "Portefólio", href: "#" },
-    { label: "Blog", href: "#" },
-    { label: "Contactos", href: "#" },
+    { label: "Sobre", href: "/sobre" },
+    { label: "Serviços", href: "/#servicos" },
+    { label: "Software", href: "/software" },
+    { label: "Portefólio", href: "/portfolio" },
+    { label: "Blog", href: "/blog" },
+    { label: "Contactos", href: "/contactos" },
   ];
+
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    if (href.startsWith("/#")) return false; // Links de âncora na home não são considerados 'active' de rota
+    return pathname.startsWith(href);
+  };
 
   return (
     <header className="absolute top-0 left-0 w-full z-[100] py-4">
@@ -44,15 +52,21 @@ export function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6">
-          {links.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="text-sm font-medium text-primary-50 hover:text-secondary-900"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {links.map((link) => {
+            const active = isActive(link.href);
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`text-sm font-medium transition-colors ${active
+                    ? "text-secondary-900"
+                    : "text-primary-50 hover:text-secondary-900"
+                  }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-4">
@@ -122,16 +136,22 @@ export function Header() {
           </div>
 
           <div className="flex flex-col px-6 gap-6">
-            {links.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-2xl font-light text-white hover:text-primary-300 transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {links.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={`text-2xl font-light transition-colors ${active
+                      ? "text-secondary-300"
+                      : "text-white hover:text-secondary-300"
+                    }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>

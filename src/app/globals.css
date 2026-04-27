@@ -344,11 +344,11 @@
   }
 
   a:hover {
-    color: var(--color-primary-400);
+    color: var(--color-primary-500);
   }
 
   a:active {
-    color: var(--color-primary-600);
+    color: var(--color-primary-500);
   }
 
   a:visited {
