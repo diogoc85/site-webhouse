@@ -38,7 +38,7 @@ const problems = [
 
 export function Problemas() {
   return (
-    <Section className="problemas full bg-secondary-800 py-20 md:py-32">
+    <Section id="problemas" className="problemas full bg-secondary-800 py-20 md:py-32">
       <div className=" flex flex-col items-center gap-16 md:gap-24">
 
         {/* Header da Section */}

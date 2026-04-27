@@ -11,35 +11,35 @@ const portfolioItems = [
     id: 1,
     title: "Elite",
     subtitle: "Consultoria em gerenciamento",
-    image: "/assets/portefolio/image 1.jpg?v=1",
+    image: "/assets/portefolio/image 1.webp?v=1",
     link: "#",
   },
   {
     id: 2,
     title: "J Dias",
     subtitle: "Cozinhas planejadas",
-    image: "/assets/portefolio/image 2.jpg?v=1",
+    image: "/assets/portefolio/image 2.webp?v=1",
     link: "#",
   },
   {
     id: 3,
     title: "Watch Magazine",
     subtitle: "E-commerce de luxo",
-    image: "/assets/portefolio/image 3.jpg?v=1",
+    image: "/assets/portefolio/image 3.webp?v=1",
     link: "#",
   },
   {
     id: 4,
     title: "XNParts",
     subtitle: "Peças automotivas",
-    image: "/assets/portefolio/image 4.jpg?v=1",
+    image: "/assets/portefolio/image 4.webp?v=1",
     link: "#",
   },
 ];
 
 export function Portfolio() {
   return (
-    <Section className="portfolio full bg-secondary-900 py-16 md:py-24 overflow-hidden">
+    <Section id="portfolio" className="portfolio full bg-secondary-900 py-16 md:py-24 overflow-hidden">
       <div className="container-site flex flex-col items-center gap-4">
         {/* Badge */}
         {/* <Reveal className="flex w-fit items-center gap-1 border border-secondary-600 rounded-full px-2 py-1.5">

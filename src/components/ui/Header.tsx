@@ -17,7 +17,7 @@ export function Header() {
   ];
 
   const links = [
-    { label: "Home", href: "#" },
+    { label: "Home", href: "/" },
     { label: "Sobre", href: "#" },
     { label: "Serviços", href: "#" },
     { label: "Software", href: "#" },
@@ -48,7 +48,7 @@ export function Header() {
             <Link
               key={link.label}
               href={link.href}
-              className="text-sm font-medium text-primary-50 hover:text-white transition-colors"
+              className="text-sm font-medium text-primary-50 hover:text-secondary-900"
             >
               {link.label}
             </Link>

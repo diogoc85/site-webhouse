@@ -7,6 +7,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import Image from "next/image";
 import Link from "next/link";
 import { CTA } from "@/components/sections/CTA";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { ArrowUpRight, CheckCircle, NetworkIcon, CrosshairIcon, Storefront, ShoppingBagOpen, Gear, ChartLineUp } from "@phosphor-icons/react";
 
 export default function EcommerceServicePage() {
@@ -16,14 +17,14 @@ export default function EcommerceServicePage() {
 
       <div className="relative z-10 ">
         {/* Hero Section with Diagonal Gradient and Centered Background Image */}
-        <section className="relative w-full h-[93vh] flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-32 overflow-hidden bg-[linear-gradient(135deg,#C71131_0%,#EF3B1F_100%)]">
+        <section id="hero" className="relative w-full h-[93vh] flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-32 overflow-hidden bg-[linear-gradient(135deg,#C71131_0%,#EF3B1F_100%)]">
 
           {/* Background Image Layer */}
           <div className="absolute inset-0 z-0 flex items-end justify-center pointer-events-none">
             <Reveal animation="fade-right" className="flex items-end justify-center ">
               {/* Desktop Background */}
               <Image
-                src="/assets/servicos/bg-ecommerce-marketplace.png?v=2"
+                src="/assets/servicos/bg-ecommerce-marketplace.webp?v=2"
                 alt="Background ecommerce marketplace"
                 width={1580}
                 height={862}
@@ -32,7 +33,7 @@ export default function EcommerceServicePage() {
               />
               {/* Mobile Background */}
               <Image
-                src="/assets/servicos/bg-ecommerce-marketplace-mobile.png?v=3"
+                src="/assets/servicos/bg-ecommerce-marketplace-mobile.webp?v=3"
                 alt="Background ecommerce marketplace"
                 width={1000}
                 height={1500}
@@ -43,9 +44,17 @@ export default function EcommerceServicePage() {
           </div>
 
           <div className="container-site relative z-10 flex flex-col items-center text-center pt-64 lg:pt-0 lg:text-left lg:items-start">
-            <Reveal className="flex w-fit items-center gap-1 border border-white/30 rounded-full px-2 py-1.5 mb-3 lg:mb-6">
-              <CrosshairIcon weight="regular" className="w-2 h-2 text-white animate-pulse" />
-              <span className="text-white/80 text-xs md:text-sm tracking-wide">Serviços</span>
+            <Reveal className="flex flex-col gap-4 mb-3 lg:mb-6">
+              <Breadcrumbs 
+                items={[
+                  { label: "Serviços", href: "/#servicos" },
+                  { label: "E-commerce", href: "/servicos/loja-online" }
+                ]} 
+              />
+              <div className="flex w-fit items-center gap-1 border border-white/30 rounded-full px-2 py-1.5">
+                <CrosshairIcon weight="regular" className="w-2 h-2 text-white animate-pulse" />
+                <span className="text-white/80 text-xs md:text-sm tracking-wide">E-commerce e Marketplace</span>
+              </div>
             </Reveal>
 
             <Reveal delay={150} className="mb-3 lg:mb-4">
@@ -71,11 +80,11 @@ export default function EcommerceServicePage() {
         </section>
 
         {/* Content Section */}
-        <Section className="bg-secondary-800 py-20 md:py-32">
+        <Section id="estrategia" className="bg-secondary-800 py-20 md:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <Reveal animation="fade-right" className="flex items-center justify-center">
               <Image
-                src="/assets/servicos/marketplace.jpg?v=1"
+                src="/assets/servicos/marketplace.webp?v=1"
                 alt="E-commerce e marketplace"
                 width={400}
                 height={400}
@@ -94,7 +103,7 @@ export default function EcommerceServicePage() {
           </div>
         </Section>
 
-        <Section className="bg-secondary-900 py-20 md:py-32">
+        <Section id="entrega" className="bg-secondary-900 py-20 md:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <Reveal className="flex w-fit items-center gap-1 border border-secondary-600 rounded-full px-2 py-1.5 mb-6">

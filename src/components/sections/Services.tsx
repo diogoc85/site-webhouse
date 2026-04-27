@@ -11,37 +11,37 @@ const services = [
   {
     title: "Gestão de Redes Sociais",
     description: "Presença estratégica nas redes e engajamento qualificado.",
-    image: "/assets/servicos/social-media.jpg?v=1",
+    image: "/assets/servicos/social-media.webp?v=1",
     link: "/servicos/gestoes-de-redes-sociais"
   },
   {
     title: "Tráfego Pago",
     description: "Presença estratégica nas redes e engajamento qualificado.",
-    image: "/assets/servicos/ads.jpg?v=1",
+    image: "/assets/servicos/ads.webp?v=1",
     link: "/servicos/trafego-pago"
   },
   {
     title: "Métricas e SEO",
     description: "Presença estratégica nas redes e engajamento qualificado.",
-    image: "/assets/servicos/metrics.jpg?v=1",
+    image: "/assets/servicos/metrics.webp?v=1",
     link: "/servicos/seo"
   },
   {
     title: "E-commerce e marketplace",
     description: "Sua loja vendendo on-line 24H por dia de forma automática.",
-    image: "/assets/servicos/ecommerce-mkt.jpg?v=1",
+    image: "/assets/servicos/ecommerce-mkt.webp?v=1",
     link: "/servicos/loja-online"
   },
   {
     title: "Sites institucionais e landing pages",
     description: "Sites focados em conversão, rápidos e com design exclusivo.",
-    image: "/assets/servicos/sites-landignpages.jpg?v=1",
+    image: "/assets/servicos/sites-landignpages.webp?v=1",
     link: "/servicos/criacao-de-sites"
   },
   {
     title: "SMS Marketing",
     description: "Alcance seus clientes onde eles estiverem com mensagens rápidas e diretas.",
-    image: "/assets/servicos/sms-mkt.jpg?v=1",
+    image: "/assets/servicos/sms-mkt.webp?v=1",
     link: "/servicos/sms-marketing"
   }
 ];
@@ -101,7 +101,7 @@ export function Services() {
   };
 
   return (
-    <Section className="servicos full bg-secondary-900 py-20 md:py-32 overflow-hidden">
+    <Section id="servicos" className="servicos full bg-secondary-900 py-20 md:py-32 overflow-hidden">
       <div className="container-site mb-12 md:mb-16">
         <Reveal className="flex flex-col items-center gap-4 text-center">
           {/* Badge */}

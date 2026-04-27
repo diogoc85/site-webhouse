@@ -19,7 +19,7 @@ export function CTA({
   buttonText = "Quero escalar meu negócio",
 }: CTAProps) {
   return (
-    <Section className="cta full bg-primary-500 py-24 md:py-32">
+    <Section id="contato" className="cta full bg-primary-500 py-24 md:py-32">
 
       <div className="container-site flex flex-col items-center justify-center text-center gap-6 md:gap-8">
 

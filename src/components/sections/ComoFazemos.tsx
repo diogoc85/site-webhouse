@@ -55,7 +55,7 @@ const workflowSteps = [
 
 export function ComoFazemos() {
   return (
-    <Section className="como-fazemos full bg-secondary-800 py-20 md:py-32">
+    <Section id="como-fazemos" className="como-fazemos full bg-secondary-800 py-20 md:py-32">
       <div className="">
 
         {/* Superior: Conteúdo sticky na esquerda, scroll focus na direita */}

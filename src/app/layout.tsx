@@ -85,6 +85,28 @@ export default function RootLayout({
 
         {/* Facebook Pixel — adicionar PIXEL_ID futuramente */}
         {/* <script dangerouslySetInnerHTML={{ __html: `!function(f,b,e,v,n,t,s){...}` }} /> */}
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Web House",
+              "url": "https://webhouse.com.br",
+              "logo": "https://webhouse.com.br/favicon.svg",
+              "description": "A Web House é uma agência digital especializada em criação de sites, identidade visual, tráfego pago e estratégias digitais.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "BR"
+              },
+              "sameAs": [
+                "https://www.instagram.com/webhouse",
+                "https://www.linkedin.com/company/webhouse"
+              ]
+            }),
+          }}
+        />
       </head>
       <body className="font-sans antialiased bg-secondary-900 text-white">
         <SmoothScroll>

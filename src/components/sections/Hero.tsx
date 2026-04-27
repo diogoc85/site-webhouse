@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <Section className="bg-primary-500 text-white min-h-screen flex flex-col relative overflow-hidden">
+    <Section id="hero" className="bg-primary-500 text-white min-h-screen flex flex-col relative overflow-hidden">
 
       {/* Central Glow Blob */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] md:w-[900px] h-[600px] md:h-[900px] bg-primary-500/70 rounded-full filter blur-[160px] z-5 pointer-events-none" />
@@ -26,7 +26,7 @@ export function Hero() {
       <div
         className="absolute inset-0 z-0 pointer-events-none opacity-10"
         style={{
-          backgroundImage: "url('/assets/servicos/line-bg.png')",
+          backgroundImage: "url('/assets/servicos/line-bg.webp')",
           backgroundRepeat: 'repeat',
           backgroundSize: '' // Ajuste opcional para o tamanho do padrão
         }}
@@ -55,12 +55,12 @@ export function Hero() {
         {/* CTAs */}
         <Reveal delay={300}>
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
-            <Link href="/contactos" className="bg-secondary-900 hover:bg-secondary-600 text-sm lg:text-base w-full lg:w-fit btn-lg flex items-center gap-2 text-white rounded-md py-4 px-6 transition-colors">
+            <Link href="/contactos" className="bg-secondary-900 hover:bg-secondary-600 text-sm lg:text-lg w-full lg:w-fit btn-lg flex items-center gap-2 text-white rounded-md py-4 px-6 transition-colors">
               Quero marcar uma conversa
               <ArrowUpRight weight="regular" className="w-3 h-3" />
             </Link>
 
-            <Link href="/projetos" className="text-sm lg:text-base w-full lg:w-fit btn-lg flex items-center justify-center gap-2 bg-primary-400/50 hover:bg-primary-400 text-white rounded-md py-4 px-6 transition-colors">
+            <Link href="/projetos" className="text-sm lg:text-lg w-full lg:w-fit btn-lg flex items-center justify-center gap-2 bg-primary-400/50 hover:bg-primary-400 text-white rounded-md py-4 px-6 transition-colors">
               Ver nossos projetos
               <Eye weight="regular" className="w-3 h-3" />
             </Link>

@@ -14,7 +14,7 @@ const logos = [
 
 export function LogoTicker() {
   return (
-    <Section className="logo-ticker full bg-secondary-700 py-16 md:py-20 overflow-hidden">
+    <Section id="clientes" className="logo-ticker full bg-secondary-700 py-16 md:py-20 overflow-hidden">
       <div className="container-site flex flex-col items-center">
         <Reveal>
           <h2 className="text-center text-primary-50 text-lg md:text-xl font-light">
