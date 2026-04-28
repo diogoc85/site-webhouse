@@ -21,7 +21,7 @@ export function CTA({
   return (
     <Section id="contato" className="cta full bg-primary-500 py-24 md:py-32">
 
-      <div className="container-site flex flex-col items-center justify-center text-center gap-6 md:gap-8">
+      <div className="flex flex-col items-center justify-center text-center gap-6 md:gap-8">
 
         <div className="flex flex-col items-center gap-4">
           {/* Badge */}
@@ -43,7 +43,7 @@ export function CTA({
 
         {/* Botão */}
         <Reveal delay={300} className="">
-          <Link href="/contactos" className="bg-secondary-700 hover:bg-secondary-800 text-sm lg:text-lg btn-lg flex items-center gap-2 text-white rounded-md lg:py-4 lg:px-6">
+          <Link href="/contactos" className="w-fit bg-secondary-500 hover:bg-secondary-800 btn-lg text-md lg:text-lg flex items-center gap-2 text-white rounded-md py-4 px-2 lg:px-4 transition-colors">
             {buttonText}
             <ArrowUpRight weight="regular" className="w-3 h-3" />
           </Link>

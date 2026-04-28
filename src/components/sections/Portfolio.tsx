@@ -79,7 +79,7 @@ export function Portfolio() {
         <Reveal delay={300}>
           <Link
             href="/portefolio"
-            className="bg-primary-500 hover:bg-primary-400 text-sm lg:text-lg btn-lg flex items-center gap-2 text-white rounded-md lg:py-4 lg:px-6"
+            className="w-fit bg-primary-500 hover:bg-primary-400 btn-lg text-md lg:text-lg flex items-center gap-2 text-white rounded-md py-4 px-2 lg:px-4 transition-colors"
           >
             Todos os projetos
             <ArrowUpRight weight="regular" className="w-3 h-3" />

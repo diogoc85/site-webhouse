@@ -20,7 +20,7 @@ export default function EcommerceServicePage() {
         <section id="hero" className="relative w-full h-[93vh] flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-32 overflow-hidden bg-[linear-gradient(135deg,#C71131_0%,#EF3B1F_100%)]">
 
           {/* Background Image Layer */}
-          <div className="absolute inset-0 z-0 flex items-end justify-center pointer-events-none bg-top md:bg-bottom">
+          <div className="absolute inset-0 z-0 flex lg:items-end items-start justify-center pointer-events-none bg-top md:bg-bottom">
             <Reveal animation="fade-right" className="flex items-end justify-center ">
               {/* Desktop Background */}
               <Image
